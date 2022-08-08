@@ -61,9 +61,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	append-ldflags -Wl,-z,noexecstack
-	emake CXX="${CXX}" STRIP=: one
-}
+	emake CXX="${CXX}"
 
 src_test() {
 	emake selftest
