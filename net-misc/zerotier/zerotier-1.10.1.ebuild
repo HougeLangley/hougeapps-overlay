@@ -61,11 +61,12 @@ pkg_setup() {
 }
 
 src_compile() {
-	make -j40 CXX="${CXX}"
+	append-ldflags -Wl,-z,noexecstack
+	emake CXX="${CXX}" STRIP=: one
 }
 
 src_test() {
-	make selftest
+	emake selftest
 	./zerotier-selftest || die
 }
 
