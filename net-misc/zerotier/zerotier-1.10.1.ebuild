@@ -26,9 +26,9 @@ DEPEND="${RDEPEND}"
 
 DOCS=( README.md AUTHORS.md )
 
-src_compile() {
-	emake
-}
+#src_compile() {
+#	emake
+#}
 
 src_test() {
 	emake selftest
