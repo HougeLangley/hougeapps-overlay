@@ -19,7 +19,8 @@ S="${WORKDIR}/ZeroTierOne-${PV}"
 RDEPEND="
 	dev-libs/json-glib
 	net-libs/libnatpmp
-	net-libs/miniupnpc:=
+	net-libs/miniupnpc
+	dev-lang/rust
 	clang? ( >=sys-devel/clang-14:* )"
 
 DEPEND="${RDEPEND}"
