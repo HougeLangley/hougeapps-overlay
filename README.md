@@ -1,3 +1,3 @@
 # hougeapps-overlay
 
-## NOTE：This overlay is for tesing.
+## NOTE：This overlay for tesing.
