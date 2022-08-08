@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit flag-o-matic systemd toolchain-funcs
+inherit systemd
 
 HOMEPAGE="https://www.zerotier.com/"
 DESCRIPTION="A software-based managed Ethernet switch for planet Earth"
@@ -25,10 +25,6 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 DOCS=( README.md AUTHORS.md )
-
-#src_compile() {
-#	emake
-#}
 
 src_test() {
 	emake selftest
