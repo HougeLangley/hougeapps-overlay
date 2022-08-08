@@ -61,7 +61,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	make CXX="${CXX}"
+	make -j40 CXX="${CXX}"
 }
 
 src_test() {
