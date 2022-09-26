@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/zzzgydi/clash-verge"
 
 KEYWORDS="~amd64"
 
-SRC_URI="https://github.com/HougeLangley/clash-verge-pkg/releases/download/gentoo/${P}.deb"
+SRC_URI="http://hougearch.litterhougelangley.club/src/${P}.deb"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -39,11 +39,12 @@ src_prepare() {
 }
 
 src_install() {
-	if	use	system-clash;
-		then	dobin usr/bin/{clash-meta,clash-verge}
-		else	dobin usr/bin/{clash,clash-meta,clash-verge}
+	if	use	system-clash;	then
+		dobin usr/bin/{clash-meta,clash-verge}
+	else
+		dobin usr/bin/{clash,clash-meta,clash-verge}
 	fi
-	
+
 	insinto /usr/lib/${MY_PN}/resources
 	doins usr/lib/${MY_PN}/resources/Country.mmdb
 
