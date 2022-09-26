@@ -8,7 +8,7 @@ inherit desktop unpacker xdg
 DESCRIPTION="Advanced cross-platform Dropbox, Google Drive and Microsoft OneDrive client"
 HOMEPAGE="https://www.insynchq.com/"
 
-SRC_URI="https://github.com/HougeLangley/hougeapps-overlay/releases/download/apps-downloads/insync_${PV}-bullseye_amd64.deb"
+SRC_URI="https://cdn.insynchq.com/builds/linux/insync_${PV}-bullseye_amd64.deb"
 
 RESTRICT="strip"
 
