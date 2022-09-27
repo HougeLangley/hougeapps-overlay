@@ -60,7 +60,7 @@ src_unpack() {
 	UNIPATCH_LIST="${DISTDIR}/v${OKV}${LQX_VERSION}.patch.xz"
 	UNIPATCH_STRICTORDER="yes"
 	
-	if use cjk	;	then
+	if use cjk; then
 		UNIPATCH_LIST+=" ${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch"
 	fi
 

@@ -36,7 +36,7 @@ src_unpack() {
 	UNIPATCH_LIST_DEFAULT="${DISTDIR}/patch-${OKV}${XANMOD_VERSION}.xz"
 	UNIPATCH_LIST=""
 
-	if use cjk	;	then
+	if use cjk; then
 		UNIPATCH_LIST+=" ${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch"
 	fi
 
