@@ -31,7 +31,7 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_install() {
-	if	use	system-clash;	then
+	if use system-clash; then
 		dobin usr/bin/{clash-meta,clash-verge}
 	else
 		dobin usr/bin/{clash,clash-meta,clash-verge}
