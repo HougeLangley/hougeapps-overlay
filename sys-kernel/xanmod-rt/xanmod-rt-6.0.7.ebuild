@@ -3,7 +3,7 @@
 
 EAPI="8"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="2"
+K_GENPATCHES_VER="1"
 K_SECURITY_UNSUPPORTED="1"
 K_NOSETEXTRAVERSION="1"
 ETYPE="sources"
@@ -22,10 +22,10 @@ KEYWORDS="~amd64"
 IUSE="+cjk"
 SLOT="0"
 XANMOD_VERSION="1"
-RT_VERSION="48"
+RT_VERSION="14"
 XANMOD_RT_URI="https://github.com/xanmod/linux/releases/download/"
 OKV="${OKV}-rt${RT_VERSION}-xanmod${XANMOD_VERSION}"
-CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v5.x/"
+CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${GENPATCHES_URI}

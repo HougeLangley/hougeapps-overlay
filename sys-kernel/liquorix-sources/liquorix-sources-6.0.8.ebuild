@@ -44,7 +44,7 @@ DESCRIPTION="Liquorix kernel is best one for desktop, multimedia and gaming work
 HOMEPAGE="https://liquorix.net/"
 LQX_VERSION="1"
 LQX_URI="https://github.com/zen-kernel/zen-kernel/releases/download/"
-CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v5.x/"
+CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 OKV="${OKV}-lqx"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
