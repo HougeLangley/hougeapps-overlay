@@ -32,6 +32,7 @@ DEPEND="
 	app-doc/doxygen
 	<dev-libs/libsigc++-3.0.7
 	dev-python/graphviz
+	app-crypt/gpgme
 "
 BDEPEND="${DEPEND}"
 
