@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit desktop unpacker xdg
+inherit unpacker xdg
 
 DESCRIPTION="Advanced cross-platform Dropbox, Google Drive and Microsoft OneDrive client"
 HOMEPAGE="https://www.insynchq.com/"
@@ -15,21 +15,23 @@ RESTRICT="strip"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="wayland"
 
 RDEPEND="
-	>=sys-libs/glibc-2.29
-	x11-misc/xdg-utils
-	dev-libs/nss
 	app-crypt/gnupg
-	media-libs/libglvnd
-	dev-qt/qtvirtualkeyboard
-	dev-libs/wayland
 	dev-libs/libthai
+	dev-libs/nss
+	dev-qt/qtvirtualkeyboard
+	sys-devel/gcc
+	>=sys-libs/glibc-2.31
+	x11-misc/xdg-utils
+	wayland? (
+		dev-libs/wayland
+	)
 "
 
 PATCHES=(
-	"${FILESDIR}/insync-3-fix-ca-path.patch"
+	"${FILESDIR}/insync-3-fix-desktop-file.patch"
 	"${FILESDIR}/insync-3-lib64.patch"
 )
 
@@ -38,7 +40,7 @@ QA_PREBUILT="*"
 
 src_unpack() {
 	unpack "insync_${PV}-bullseye_amd64.deb"
-	unpack ${WORKDIR}"/data.tar.gz"
+	unpack "${WORKDIR}/data.tar.gz"
 
 	mkdir -p "${S}"
 	mv "${WORKDIR}"/usr "${S}"/
@@ -55,6 +57,15 @@ src_install() {
 
 	rm -Rf "${D}"/usr/lib64/.build-id
 	rm -rf "${D}"/usr/share/man/man1/
+
+	use wayland || rm -r "${D}/usr/lib64/insync/PySide2/plugins/wayland-graphics-integration-server" "${D}/usr/lib64/insync/libQt5WaylandCompositor.so.5" || die "Error removing wayland related files from install."
+
+	# Make sure it starts on KDE
+	# There is a bug that on some KDE systems Insync doesn't start properly
+	# Or crashes when the tray icon is clicked
+	# This is because Insync is using bundled libstdc++.so.6 which might lead to a version conflict
+	# So we remove it here
+	rm -Rf "${D}"/usr/lib64/insync/libstdc++.so.6
 
 	echo "SEARCH_DIRS_MASK=\"/usr/lib*/insync\"" > "${T}/70-${PN}" || die
 
