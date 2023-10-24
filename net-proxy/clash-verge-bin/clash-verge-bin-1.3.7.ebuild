@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/zzzgydi/clash-verge"
 
 KEYWORDS="~amd64"
 
-SRC_URI="http://hougearch.litterhougelangley.club/src/${P}.deb"
+SRC_URI="https://github.com/zzzgydi/clash-verge/releases/download/v1.3.7/clash-verge_${PV}_amd64.deb"
 
 LICENSE="GPL-3"
 SLOT="0"

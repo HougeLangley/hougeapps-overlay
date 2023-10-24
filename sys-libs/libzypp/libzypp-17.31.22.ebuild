@@ -10,7 +10,7 @@ if [[ ${PV} == 9999* ]] ; then
 	EGIT_CHECKOUT_DIR=${PN}-${PV}
 else
 	SRC_URI="https://github.com/openSUSE/libzypp/archive/refs/tags/${PV}.tar.gz -> libzypp-${PV}.tar.gz"
-	KEYWORDS="~amd64 ~arm64 ~loong"
+	KEYWORDS="~amd64 ~arm64 ~loong ~riscv"
 	S="${WORKDIR}/${PN}-${PV}"
 fi
 
@@ -30,7 +30,7 @@ DEPEND="
 	dev-cpp/yaml-cpp
 	net-libs/libproxy
 	app-doc/doxygen
-	<dev-libs/libsigc++-3.0.7
+	dev-libs/libsigc++
 	dev-python/graphviz
 	app-crypt/gpgme
 "
