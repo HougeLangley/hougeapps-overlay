@@ -1,7 +1,7 @@
 # Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 DESCRIPTION="Virtual for Linux kernel sources"
 SLOT="0"
@@ -22,9 +22,5 @@ RDEPEND="
 		sys-kernel/gentoo-kernel
 		sys-kernel/gentoo-kernel-bin
 		sys-kernel/vanilla-kernel
-		sys-kernel/xanmod-lts
-		sys-kernel/xanmod-kernel
-		sys-kernel/xanmod-edge
 		sys-kernel/liquorix-sources
-		sys-kernel/xanmod-rt
 	)"
