@@ -32,7 +32,7 @@ S="${WORKDIR}"
 src_install() {
 	insinto /opt
 	doins -r opt/*
-	fperms +x /opt/Chatbox
+	fperms +x /opt/Chatbox/xyz.chatboxapp.app
 	dosym -r /opt/Chatbox/xyz.chatboxapp.app /usr/bin/chatbox
 
 	gzip -d usr/share/doc/xyz.chatboxapp.app/*.gz || die
