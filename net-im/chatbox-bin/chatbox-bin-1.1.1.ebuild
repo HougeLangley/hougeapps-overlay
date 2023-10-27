@@ -22,6 +22,8 @@ RDEPEND="
 	dev-libs/libappindicator:3
 	x11-libs/libX11
 	x11-themes/hicolor-icon-theme
+	dev-libs/nspr
+	dev-libs/nss
 "
 BDEPEND=""
 
