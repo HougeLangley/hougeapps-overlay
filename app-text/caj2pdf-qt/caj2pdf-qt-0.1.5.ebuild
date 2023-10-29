@@ -18,7 +18,7 @@ IUSE=""
 DEPEND="
 	sys-libs/glibc
 	media-libs/jbig2dec
-	app-text/mupdf-tools
+	app-text/mupdf
 	sys-libs/zlib
 	dev-qt/qtcore:5
 	sys-libs/gcc-libs
