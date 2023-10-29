@@ -59,12 +59,12 @@ src_prepare() {
 	git config user.email "noreply@localhost" || die
 	git commit -m "Init" || die
 }
-
-src_compile() {
-	emake -C "${S}" -f build-unix.sh cli
-	emake -C "${S}" -f build-unix.sh qt
-}
-
+#
+#src_compile() {
+#	emake -C "${S}" -f build-unix.sh cli
+#	emake -C "${S}" -f build-unix.sh qt
+#}
+#
 src_install() {
 	doicon "${FILESDIR}/${P}.desktop"
 }
