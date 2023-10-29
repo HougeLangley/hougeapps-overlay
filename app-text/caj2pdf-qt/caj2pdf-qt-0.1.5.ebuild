@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson
+inherit cmake
 DESCRIPTION="CAJ to PDF converter (GUI version)"
 HOMEPAGE="https://caj2pdf-qt.sainnhe.dev"
 SRC_URI="
