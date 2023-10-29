@@ -3,7 +3,6 @@
 
 EAPI=8
 
-inherit cmake
 DESCRIPTION="CAJ to PDF converter (GUI version)"
 HOMEPAGE="https://caj2pdf-qt.sainnhe.dev"
 SRC_URI="
@@ -61,11 +60,11 @@ src_prepare() {
 	git commit -m "Init" || die
 }
 #
-#src_compile() {
-#	emake -C "${S}" -f build-unix.sh cli
-#	emake -C "${S}" -f build-unix.sh qt
-#}
-#
+src_compile() {
+	./build-unix.sh cli
+	./build-unix.sh qt
+}
+
 src_install() {
 	doicon "${FILESDIR}/${P}.desktop"
 }
