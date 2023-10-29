@@ -47,6 +47,11 @@ BDEPEND="
     dev-vcs/git
     dev-lang/python
     dev-util/cmake
+	virtual/pkgconfig
+    dev-qt/qmake:5
+    app-text/pyinstaller
+    dev-python/pip
+    dev-python/virtualenv
 "
 
 src_prepare() {
@@ -58,11 +63,25 @@ src_prepare() {
 	git config user.name "Anonymous" || die
 	git config user.email "noreply@localhost" || die
 	git commit -m "Init" || die
+	eapply "${FILESDIR}/caj2pdf.diff"
+	eapply "${FILESDIR}/mupdf.diff"
 }
 #
 src_compile() {
-	./build-unix.sh cli
-	./build-unix.sh qt
+	cd "${S}/caj2pdf/lib" || die
+    cc -Wall -fPIC --shared -o libjbigdec.so jbigdec.cc JBigDecode.cc || die
+    cc -Wall `pkg-config --cflags jbig2dec` -fPIC --shared -o libjbig2codec.so decode_jbig2data_x.cc `pkg-config --libs jbig2dec` || die
+    
+    cd "${S}/caj2pdf" || die
+    python3 -m venv venv || die
+    ./venv/bin/pip install -r requirements.txt || die
+    ./venv/bin/pip install pyinstaller || die
+    ./venv/bin/pyinstaller -F caj2pdf || die
+
+	mkdir -p "${S}/build" || die
+    cd "${S}/build" || die
+    cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" .. || die
+    cmake --build . || die
 }
 
 src_install() {
