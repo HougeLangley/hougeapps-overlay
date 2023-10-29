@@ -21,12 +21,10 @@ DEPEND="
 	app-text/mupdf
 	sys-libs/zlib
 	dev-qt/qtcore:5
-	sys-libs/gcc-libs
 	media-libs/libpng
 	media-libs/harfbuzz
 	app-text/md4c
 	dev-libs/double-conversion
-	dev-libs/icu
 	dev-libs/libpcre2
 	app-arch/zstd
 	dev-libs/glib:2
