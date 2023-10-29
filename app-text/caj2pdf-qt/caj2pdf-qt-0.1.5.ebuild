@@ -29,7 +29,7 @@ DEPEND="
 	app-arch/zstd
 	dev-libs/glib:2
 	media-libs/freetype:2
-	dev-libs/graphite2
+	media-gfx/graphite2
 	sys-libs/libcap
 	dev-libs/libgcrypt
 	app-arch/xz-utils
