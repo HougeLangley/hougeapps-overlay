@@ -48,7 +48,6 @@ BDEPEND="
     dev-lang/python
     dev-util/cmake
 	virtual/pkgconfig
-    dev-qt/qmake:5
     app-text/pyinstaller
     dev-python/pip
     dev-python/virtualenv
