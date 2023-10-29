@@ -3,6 +3,7 @@
 
 EAPI=8
 
+inherit meson
 DESCRIPTION="CAJ to PDF converter (GUI version)"
 HOMEPAGE="https://caj2pdf-qt.sainnhe.dev"
 SRC_URI="
