@@ -12,9 +12,6 @@ K_EXP_GENPATCHES_NOUSE="1"
 # Just get basic genpatches, -xanmod patch set already includes main updates
 K_GENPATCHES_VER="1"
 
-# -xanmod-hybrid already sets EXTRAVERSION to kernel Makefile
-K_NOSETEXTRAVERSION="1"
-
 # Not supported by the Gentoo security team
 K_SECURITY_UNSUPPORTED="1"
 
