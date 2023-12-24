@@ -33,14 +33,14 @@ DESCRIPTION="Legion Go Linux Customization Kernel"
 HOMEPAGE="https://xanmod.org/"
 XANMOD_VERSION="1"
 LEGION_LINUX_VERSION="0.0.9"
-XANMOD_PATCH_URI="https://master.dl.sourceforge.net/project/xanmod/releases/main"
+XANMOD_PATCH_URI="https://github.com/HougeLangley/hougeapps-overlay/releases/download"
 LEGION_GO_CONTROLLERS_URI="https://hougearch.litterhougelangley.club/doc"
 LEGION_GO_PANEL_URI="https://hougearch.litterhougelangley.club/doc"
 LEGION_LINUX_URI="https://github.com/johnfanv2/LenovoLegionLinux/releases/download/"
 CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
-	${XANMOD_PATCH_URI}/${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.xz
+	${XANMOD_PATCH_URI}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
 	${GENPATCHES_URI}
 	${LEGION_GO_CONTROLLERS_URI}/add_lenovo_legion_go_controllers.patch
 	${LEGION_GO_PANEL_URI}/add_lenovo_legion_go_panel.patch
@@ -52,7 +52,7 @@ KEYWORDS="~amd64"
 K_EXTRAEINFO="For more info PLEASE LEAVE MESSAGE TO ISSUE."
 
 src_unpack() {
-	UNIPATCH_LIST="${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.xz"
+	UNIPATCH_LIST="${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch"
 	UNIPATCH_LIST="${DISTDIR}/add_lenovo_legion_go_controllers.patch"
 	UNIPATCH_LIST="${DISTDIR}/add_lenovo_legion_go_panel.patch"
 	UNIPATCH_LIST="${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch"
