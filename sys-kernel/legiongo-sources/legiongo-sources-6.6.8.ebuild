@@ -39,6 +39,7 @@ LEGION_GO_PANEL_URI="https://hougearch.litterhougelangley.club/doc"
 LEGION_LINUX_URI="https://github.com/johnfanv2/LenovoLegionLinux/releases/download/"
 CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 SRC_URI="
+	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${XANMOD_PATCH_URI}/${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.xz
 	${GENPATCHES_URI}
 	${LEGION_GO_CONTROLLERS_URI}/add_lenovo_legion_go_controllers.patch
