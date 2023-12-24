@@ -52,11 +52,13 @@ KEYWORDS="~amd64"
 K_EXTRAEINFO="For more info PLEASE LEAVE MESSAGE TO ISSUE."
 
 src_unpack() {
-	UNIPATCH_LIST="${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch"
-	UNIPATCH_LIST="${DISTDIR}/add_lenovo_legion_go_controllers.patch"
-	UNIPATCH_LIST="${DISTDIR}/add_lenovo_legion_go_panel.patch"
-	UNIPATCH_LIST="${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch"
-	UNIPATCH_LIST="${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch"
+	UNIPATCH_LIST_DEFAULT="
+	${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
+	${DISTDIR}/add_lenovo_legion_go_controllers.patch
+	${DISTDIR}/add_lenovo_legion_go_panel.patch
+	${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
+	${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
+	"
 
 	kernel-2_src_unpack
 }
