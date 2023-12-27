@@ -23,5 +23,6 @@ RDEPEND="
 		sys-kernel/gentoo-kernel-bin
 		sys-kernel/vanilla-kernel
 		sys-kernel/legiongo-sources
+		sys-kernel/legion-sources
 		sys-kernel/liquorix-sources
 	)"
