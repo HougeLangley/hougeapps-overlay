@@ -35,7 +35,6 @@ XANMOD_VERSION="1"
 LEGION_LINUX_VERSION="0.0.9"
 XANMOD_PATCH_URI="https://github.com/HougeLangley/hougeapps-overlay/releases/download"
 LEGION_GO_CONTROLLERS_URI="https://hougearch.litterhougelangley.club/doc"
-LEGION_GO_PANEL_URI="https://hougearch.litterhougelangley.club/doc"
 LEGION_LINUX_URI="https://github.com/johnfanv2/LenovoLegionLinux/releases/download/"
 CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 SRC_URI="
@@ -43,7 +42,6 @@ SRC_URI="
 	${XANMOD_PATCH_URI}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
 	${GENPATCHES_URI}
 	${LEGION_GO_CONTROLLERS_URI}/add_lenovo_legion_go_controllers.patch
-	${LEGION_GO_PANEL_URI}/add_lenovo_legion_go_panel.patch
 	${LEGION_LINUX_URI}/v${LEGION_LINUX_VERSION}-prerelease/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
 	${CJKTTY_URI}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
 "
@@ -55,7 +53,6 @@ src_unpack() {
 	UNIPATCH_LIST_DEFAULT="
 	${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
 	${DISTDIR}/add_lenovo_legion_go_controllers.patch
-	${DISTDIR}/add_lenovo_legion_go_panel.patch
 	${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
 	${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
 	"
