@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile install postinst postrm preinst prepare setup test unpack
+DEPEND=app-arch/cpio sys-devel/bc sys-apps/kmod dev-libs/elfutils dev-util/pahole
+DESCRIPTION=Legion Go Linux Customization Kernel
+EAPI=8
+HOMEPAGE=https://xanmod.org/
+INHERIT=kernel-2
+IUSE=symlink build
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=!build? ( app-alternatives/cpio dev-lang/perl app-alternatives/bc app-alternatives/yacc app-alternatives/lex dev-build/make >=sys-libs/ncurses-5.2 virtual/libelf virtual/pkgconfig )
+RESTRICT=binchecks strip
+SLOT=6.7.2
+SRC_URI=https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.7.tar.xz https://github.com/HougeLangley/hougeapps-overlay/releases/download/patch-6.7.2-xanmod1/patch-6.7.2-xanmod1.patch https://hougearch.litterhougelangley.club/doc/add_lenovo_legion_go_controllers.patch https://github.com/johnfanv2/LenovoLegionLinux/releases/download//v0.0.9-prerelease/0001-Add-legion-laptop-v0.0.9.patch https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x//cjktty-6.7.patch
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	crossdev	f04338ff78f213a4a55c5c37b3c6563e	estack	c61c368a76fdf3a82fdf8dbaebea3804	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	kernel-2	1c6b8977e581e4db92fc0f6ee99babd9
+_md5_=d387024ad0c404d87bc06800267869b7
