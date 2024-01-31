@@ -34,6 +34,7 @@ HOMEPAGE="https://xanmod.org/"
 XANMOD_VERSION="1"
 LEGION_LINUX_VERSION="0.0.9"
 XANMOD_PATCH_URI="https://github.com/HougeLangley/hougeapps-overlay/releases/download"
+LEGION_GO_CONTROLLERS_URI="https://hougearch.litterhougelangley.club/doc"
 LEGION_LINUX_URI="https://github.com/johnfanv2/LenovoLegionLinux/releases/download/"
 CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
 STEAM_PATCH_URI="https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/${KV_MAJOR}.${KV_MINOR}/steamdeck-patches/"
@@ -41,6 +42,7 @@ SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${XANMOD_PATCH_URI}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
 	${GENPATCHES_URI}
+	${LEGION_GO_CONTROLLERS_URI}/add_lenovo_legion_go_controllers.patch
 	${LEGION_LINUX_URI}/v${LEGION_LINUX_VERSION}-prerelease/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
 	${CJKTTY_URI}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
 	${STEAM_PATCH_URI}/0001-x86-Introduce-Steam-Deck-Patches.patch
@@ -52,9 +54,9 @@ K_EXTRAEINFO="For more info PLEASE LEAVE MESSAGE TO ISSUE."
 src_unpack() {
 	UNIPATCH_LIST_DEFAULT="
 	${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
+	${DISTDIR}/add_lenovo_legion_go_controllers.patch
 	${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
 	${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
-	${STEAM_PATCH_URI}/0001-x86-Introduce-Steam-Deck-Patches.patch
 	"
 
 	kernel-2_src_unpack
