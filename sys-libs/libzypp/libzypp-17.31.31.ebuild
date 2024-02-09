@@ -29,7 +29,7 @@ DEPEND="
 	dev-ruby/asciidoctor
 	dev-cpp/yaml-cpp
 	net-libs/libproxy
-	app-doc/doxygen
+	app-text/doxygen
 	<dev-libs/libsigc++-3.4.0
 	dev-python/graphviz
 	app-crypt/gpgme
