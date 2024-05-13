@@ -25,5 +25,5 @@ RDEPEND="
 		sys-kernel/legiongo-sources
 		sys-kernel/legion-sources
 		sys-kernel/liquorix-sources
-		sys-kernel/loong-sources
+		sys-kernel/loongarch-sources
 	)"
