@@ -103,8 +103,8 @@ src_unpack() {
 	${FILESDIR}/0050-dt-bindings-thermal-loongson-ls2k-thermal-Fix-incorr.patch || die
 	${FILESDIR}/0051-thermal-loongson2-Add-Loongson-2K2000-support.patch || die
 	${FILESDIR}/0052-KVM-loongarch-Add-vcpu-id-check-before-create-vcpu.patch || die
-	${FILESDIR}/0053-LOONGARCH64-arch-loongarch-add-la_ow_syscall-as-in-t.patch || die
-	${FILESDIR}/0054-LOONGARCH64-la_ow_syscall-add-kconfig-for-module.patch || die
+	#${FILESDIR}/0053-LOONGARCH64-arch-loongarch-add-la_ow_syscall-as-in-t.patch || die
+	#${FILESDIR}/0054-LOONGARCH64-la_ow_syscall-add-kconfig-for-module.patch || die
 	${FILESDIR}/0055-LOONGARCH64-drivers-firmware-Move-sysfb_init-from-de.patch || die
 	${FILESDIR}/0056-LOONGARCH64-drm-Makefile-Move-tiny-drivers-before-na.patch || die
 	${FILESDIR}/0057-LOONGARCH64-drm-xe-fix-build-on-non-4K-kernels.patch || die
