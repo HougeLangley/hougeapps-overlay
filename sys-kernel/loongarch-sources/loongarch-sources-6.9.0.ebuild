@@ -21,7 +21,7 @@ K_WANT_GENPATCHES="extras"
 
 # Default enable AOSC's LoongArch's Kernel, You have to choose one of them.
 # Both of them will make some errors
-IUSE="projectc"
+IUSE="bbr3"
 
 # If you have been enable src_prepare-overlay
 # please unmerge sys-kernel/xanmod-sources
@@ -40,12 +40,12 @@ detect_version
 DESCRIPTION="AOSC's LoongArch64 Kernel"
 HOMEPAGE="https://aosc.io/"
 AOSC_PATCHES_URI="https://raw.githubusercontent.com/AOSC-Dev/aosc-os-abbs/linux-kernel-6.9/runtime-kernel/linux-kernel/autobuild/patches"
-PROJECTC_URI="https://gitlab.com/alfredchen/projectc/-/raw/master/6.9"
+BBR3_URI="https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/6.9/bbr3-patches"
 MAIN_LINUX_URI="https://mirrors.ustc.edu.cn/kernel.org/linux/kernel/v6.x"
 SRC_URI="
 	${MAIN_LINUX_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${GENPATCHES_URI}
-	${PROJECTC_URI}/prjc_v6.9-r0.patch
+	${BBR3_URI}/0001-tcp-bbr3-initial-import.patch
 	${AOSC_PATCHES_URI}/0001-ath9k-rx-dma-stop-check.patch
 	${AOSC_PATCHES_URI}/0002-pci-Enable-overrides-for-missing-ACS-capabilities-5..patch
 	${AOSC_PATCHES_URI}/0003-cpuinfo-fix-a-warning-for-CONFIG_CPUMASK_OFFSTACK.patch
@@ -171,8 +171,8 @@ src_unpack() {
 	${DISTDIR}/0060-LOONGARCH64-HACK-drm-amdgpu-disable-DPM-in-auto-mode.patch || die
 	"
 
-	if use projectc; then
-		UNIPATCH_LIST+=" ${DISTDIR}/prjc_v6.9-r0.patch" || die
+	if use bbr3; then
+		UNIPATCH_LIST+=" ${DISTDIR}/0001-tcp-bbr3-initial-import.patch" || die
 	fi
 
 	kernel-2_src_unpack

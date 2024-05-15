@@ -5,6 +5,6 @@
 		<remote-id type="github">AOSC-Dev/aosc-os-abbs</remote-id>
 	</upstream>
 	<use>
-		<flag name="projectc">Enable BMQ and PDS Patches.</flag>
+		<flag name="bbr3">Enable BBR3 Patches.</flag>
 	</use>
 </pkgmetadata>
