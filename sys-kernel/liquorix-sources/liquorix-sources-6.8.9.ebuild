@@ -15,6 +15,14 @@ K_GENPATCHES_VER="1"
 # Not supported by the Gentoo security team
 K_SECURITY_UNSUPPORTED="1"
 
+# We want the very basic patches from gentoo-sources, experimental patch is
+# already included in xanmod-hybrid
+K_WANT_GENPATCHES="extras"
+
+# Default enable Xanmod, You have to choose one of them.
+# Both of them will make some errors
+IUSE=""
+
 # If you have been enable src_prepare-overlay
 # please unmerge sys-kernel/xanmod-sources
 RDEPEND=""
@@ -29,30 +37,23 @@ DEPEND="
 inherit kernel-2
 detect_version
 
-DESCRIPTION="Legion Go Linux Customization Kernel"
-HOMEPAGE="https://xanmod.org/"
-XANMOD_VERSION="1"
-LEGION_LINUX_VERSION="0.0.9"
-XANMOD_PATCH_URI="https://github.com/HougeLangley/hougeapps-overlay/releases/download"
-LEGION_LINUX_URI="https://github.com/johnfanv2/LenovoLegionLinux/releases/download/"
-CJKTTY_URI="https://raw.githubusercontent.com/zhmars/cjktty-patches/master/v6.x/"
+DESCRIPTION="Liquorix kernel is best one for desktop, multimedia and gaming workloads"
+HOMEPAGE="https://liquorix.net/"
+LQX_VERSION="2"
+LQX_URI="https://github.com/zen-kernel/zen-kernel/releases/download"
+OKV="${OKV}-lqx"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
-	${XANMOD_PATCH_URI}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
 	${GENPATCHES_URI}
-	${LEGION_LINUX_URI}/v${LEGION_LINUX_VERSION}-prerelease/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
-	${CJKTTY_URI}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
+	${LQX_URI}/v${OKV}${LQX_VERSION}/v${OKV}${LQX_VERSION}.patch.xz
 "
 KEYWORDS="~amd64"
 
-K_EXTRAEINFO="For more info PLEASE LEAVE MESSAGE TO ISSUE."
+K_EXTRAEINFO="For more info on liquorix-kernel and details on how to report problems, see: ${HOMEPAGE}."
 
 src_unpack() {
-	UNIPATCH_LIST_DEFAULT="
-	${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-xanmod${XANMOD_VERSION}.patch
-	${DISTDIR}/0001-Add-legion-laptop-v${LEGION_LINUX_VERSION}.patch
-	${DISTDIR}/cjktty-${KV_MAJOR}.${KV_MINOR}.patch
-	"
+	UNIPATCH_LIST="${DISTDIR}/v${OKV}${LQX_VERSION}.patch.xz"
+	UNIPATCH_STRICTORDER="yes"
 
 	kernel-2_src_unpack
 }
@@ -70,6 +71,6 @@ pkg_setup() {
 
 pkg_postinst() {
 	elog "MICROCODES"
-	elog "Use Xanmod-Kernel with microcodes"
+	elog "Use Liquorix-Kernel with microcodes"
 	elog "Read https://wiki.gentoo.org/wiki/Intel_microcode"
 }

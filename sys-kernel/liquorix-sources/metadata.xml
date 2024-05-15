@@ -5,6 +5,5 @@
 		<remote-id type="github">damentz/liquorix-package</remote-id>
 	</upstream>
 	<use>
-		<flag name="cjk">Enable cjktty Patches.</flag>
 	</use>
 </pkgmetadata>
