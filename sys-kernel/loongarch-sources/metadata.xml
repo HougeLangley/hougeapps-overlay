@@ -5,6 +5,6 @@
 		<remote-id type="github">AOSC-Dev/aosc-os-abbs</remote-id>
 	</upstream>
 	<use>
-		<flag name="cjk">Enable cjktty Patches.</flag>
+		<flag name="projectc">Enable BMQ and PDS Patches.</flag>
 	</use>
 </pkgmetadata>
