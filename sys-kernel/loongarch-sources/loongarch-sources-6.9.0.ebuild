@@ -171,7 +171,7 @@ src_unpack() {
 	${DISTDIR}/0060-LOONGARCH64-HACK-drm-amdgpu-disable-DPM-in-auto-mode.patch || die
 	"
 
-	if use project; then
+	if use projectc; then
 		UNIPATCH_LIST+=" ${DISTDIR}/prjc_v6.9-r0.patch" || die
 	fi
 
