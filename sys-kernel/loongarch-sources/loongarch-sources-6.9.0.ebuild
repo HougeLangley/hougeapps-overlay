@@ -39,7 +39,7 @@ detect_version
 
 DESCRIPTION="AOSC's LoongArch64 Kernel"
 HOMEPAGE="https://aosc.io/"
-AOSC_PATCHES_URI="https://raw.githubusercontent.com/AOSC-Dev/aosc-os-abbs/linux-kernel-6.9/runtime-kernel/linux-kernel/autobuild/patches"
+AOSC_PATCHES_URI="https://raw.githubusercontent.com/AOSC-Dev/aosc-os-abbs/stable/runtime-kernel/linux-kernel/autobuild/patches"
 BBR3_URI="https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/6.9/bbr3-patches"
 MAIN_LINUX_URI="https://mirrors.ustc.edu.cn/kernel.org/linux/kernel/v6.x"
 SRC_URI="
