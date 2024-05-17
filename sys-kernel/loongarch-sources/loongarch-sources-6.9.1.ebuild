@@ -43,7 +43,8 @@ AOSC_PATCHES_URI="https://raw.githubusercontent.com/AOSC-Dev/aosc-os-abbs/stable
 BBR3_URI="https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/6.9/bbr3-patches"
 MAIN_LINUX_URI="https://mirrors.ustc.edu.cn/kernel.org/linux/kernel/v6.x"
 SRC_URI="
-	${MAIN_LINUX_URI}/linux-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}.tar.xz
+	${MAIN_LINUX_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
+	${MAIN_LINUX_URI}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}.xz
 	${GENPATCHES_URI}
 	${BBR3_URI}/0001-tcp-bbr3-initial-import.patch
 	${AOSC_PATCHES_URI}/0001-ath9k-rx-dma-stop-check.patch
@@ -111,6 +112,7 @@ K_EXTRAEINFO="For more info on AOSC's LoongArch Kernel and details on how to rep
 
 src_unpack() {
 	UNIPATCH_LIST_DEFAULT="
+	${DISTDIR}/patch-${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}.xz || die
 	${DISTDIR}/0001-ath9k-rx-dma-stop-check.patch || die
 	${DISTDIR}/0002-pci-Enable-overrides-for-missing-ACS-capabilities-5..patch || die
 	${DISTDIR}/0003-cpuinfo-fix-a-warning-for-CONFIG_CPUMASK_OFFSTACK.patch || die
