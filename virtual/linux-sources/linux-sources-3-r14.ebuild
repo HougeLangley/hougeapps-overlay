@@ -24,4 +24,5 @@ RDEPEND="
 		sys-kernel/vanilla-kernel
 		sys-kernel/liquorix-sources
 		sys-kernel/loongarch-sources
+		sys-kernel/xanmod-rt
 	)"
