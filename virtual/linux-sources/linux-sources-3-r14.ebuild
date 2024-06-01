@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="Virtual for Linux kernel sources"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86 ~loong"
+KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 IUSE="firmware"
 
 RDEPEND="
@@ -23,6 +23,5 @@ RDEPEND="
 		sys-kernel/gentoo-kernel-bin
 		sys-kernel/vanilla-kernel
 		sys-kernel/liquorix-sources
-		sys-kernel/loongarch-sources
 		sys-kernel/xanmod-rt
 	)"
