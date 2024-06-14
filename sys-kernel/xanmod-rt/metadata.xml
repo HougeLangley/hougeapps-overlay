@@ -5,5 +5,6 @@
 		<remote-id type="gitlab">xanmod/linux</remote-id>
 	</upstream>
 	<use>
+		<flag name="steamdeck">Add Steam Deck Patches</flag>
 	</use>
 </pkgmetadata>

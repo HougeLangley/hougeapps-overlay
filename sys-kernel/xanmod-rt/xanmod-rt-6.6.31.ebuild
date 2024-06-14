@@ -21,7 +21,7 @@ ETYPE="sources"
 
 # Default enable Xanmod, You have to choose one of them.
 # Both of them will make some errors
-IUSE=""
+IUSE="-steamdeck"
 
 # If you have been enable src_prepare-overlay
 # please unmerge sys-kernel/xanmod-sources
@@ -44,21 +44,27 @@ XANMOD_VERSION="1"
 XANMOD_RT_PATCH_URI="https://master.dl.sourceforge.net/project/xanmod/releases/rt/${PV}-rt${RT_VERSION}-xanmod${XANMOD_VERSION}"
 CJK_PATCH_URI="https://github.com/zhmars/cjktty-patches/raw/master/v6.x"
 CJK_VERSION="6.6"
+STEAMDECK_PATCHES_URI="https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/${KV_MAJOR}.${KV_MINOR}/steamdeck-patches"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${GENPATCHES_URI}
 	${XANMOD_RT_PATCH_URI}/patch-${PV}-rt${RT_VERSION}-xanmod${XANMOD_VERSION}.xz
 	${CJK_PATCH_URI}/cjktty-${CJK_VERSION}.patch
+	${STEAMDECK_PATCHES_URI}/0001-x86-Introduce-Steam-Deck-Patches.patch
 "
 KEYWORDS="~amd64"
 
 K_EXTRAEINFO="For more info on xanmod-rt and details on how to report problems, see: ${HOMEPAGE}."
 
 src_unpack() {
-	UNIPATCH_LIST="
+	UNIPATCH_LIST_DEFAULT="
 		${DISTDIR}/patch-${PV}-rt${RT_VERSION}-xanmod${XANMOD_VERSION}.xz
 		${DISTDIR}/cjktty-${CJK_VERSION}.patch
 	"
+	UNIPATCH_LIST=""
+	if use steamdeck; then
+		UNIPATCH_LIST+="${DISTDIR}/0001-x86-Introduce-Steam-Deck-Patches.patch"
+	fi
 	UNIPATCH_STRICTORDER="yes"
 
 	kernel-2_src_unpack
