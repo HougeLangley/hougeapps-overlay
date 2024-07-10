@@ -39,7 +39,7 @@ detect_version
 
 DESCRIPTION="xanmod-rt kernel is xanmod's rt version"
 HOMEPAGE="https://xanmod.org/"
-RT_VERSION="33"
+RT_VERSION="35"
 XANMOD_VERSION="1"
 XANMOD_RT_PATCH_URI="https://master.dl.sourceforge.net/project/xanmod/releases/rt/${PV}-rt${RT_VERSION}-xanmod${XANMOD_VERSION}"
 CJK_PATCH_URI="https://gitlab.com/HougeLangley/cjktty-patches/-/raw/master/v6.x"
