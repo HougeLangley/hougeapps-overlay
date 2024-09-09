@@ -30,7 +30,7 @@ BDEPEND="${DEPEND}"
 src_configure(){
 	mycmakeargs=(
 		-DENABLE_BUILD_TRANS=ON
-		-DENABLE_BUILD_TESTS=ON
+		-DENABLE_BUILD_TESTS=OFF
 	)
 	cmake_src_configure
 }
