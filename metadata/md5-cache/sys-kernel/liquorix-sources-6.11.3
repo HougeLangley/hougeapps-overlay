@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile install postinst postrm preinst prepare setup test unpack
 DEPEND=app-arch/cpio sys-devel/bc sys-apps/kmod dev-libs/elfutils dev-util/pahole
-DESCRIPTION=xanmod-rt kernel is xanmod's rt version
+DESCRIPTION=Liquorix kernel is best one for desktop, multimedia and gaming workloads
 EAPI=8
-HOMEPAGE=https://xanmod.org/
+HOMEPAGE=https://liquorix.net/
 INHERIT=kernel-2
-IUSE=-steamdeck symlink build
+IUSE=symlink build
 KEYWORDS=~amd64
 LICENSE=GPL-2
 RDEPEND=!build? ( app-alternatives/cpio dev-lang/perl app-alternatives/bc dev-build/make sys-devel/bison sys-devel/flex >=sys-libs/ncurses-5.2 virtual/libelf virtual/pkgconfig )
 RESTRICT=binchecks strip
-SLOT=6.6.52
-SRC_URI=https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.6.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.6-1.extras.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.6-1.extras.tar.xz https://master.dl.sourceforge.net/project/xanmod/releases/rt/6.6.52-rt43-xanmod1/patch-6.6.52-rt43-xanmod1.xz https://gitlab.com/HougeLangley/cjktty-patches/-/raw/master/v6.x/cjktty-6.6.patch https://gitlab.com/sirlucjan/kernel-patches/-/raw/master/6.6/steamdeck-patches/0001-x86-Introduce-Steam-Deck-Patches.patch
+SLOT=6.11.3
+SRC_URI=https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.11.tar.xz https://dev.gentoo.org/~alicef/dist/genpatches/genpatches-6.11-1.extras.tar.xz https://dev.gentoo.org/~mpagano/dist/genpatches/genpatches-6.11-1.extras.tar.xz https://github.com/zen-kernel/zen-kernel/releases/download/v6.11.3-lqx1/v6.11.3-lqx1.patch.xz
 _eclasses_=toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87	multilib	b2a329026f2e404e9e371097dda47f96	crossdev	f04338ff78f213a4a55c5c37b3c6563e	estack	c61c368a76fdf3a82fdf8dbaebea3804	multiprocessing	1e32df7deee68372153dca65f4a7c21f	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54	kernel-2	0e01377cce73a7a06321d0ef97388d31
-_md5_=1842dc36f6e2861118cb941e752e9c17
+_md5_=76f6f0f5be0cf1d65101f092f3f5a09e
