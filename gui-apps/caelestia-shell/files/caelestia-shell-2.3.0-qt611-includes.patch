@@ -1,0 +1,21 @@
+--- a/plugin/src/Caelestia/Images/iutils.hpp	2026-08-24 23:12:36.688004667 +0800
++++ b/plugin/src/Caelestia/Images/iutils.hpp	2026-08-24 23:12:36.722393598 +0800
+@@ -2,6 +2,8 @@
+ 
+ #include <qobject.h>
+ #include <qqmlintegration.h>
++#include <qqmlengine.h>
++#include <qjsengine.h>
+ #include <qurl.h>
+ 
+ namespace caelestia::images {
+--- a/plugin/src/Caelestia/Config/fontbuilder.hpp	2026-08-24 23:12:36.686621834 +0800
++++ b/plugin/src/Caelestia/Config/fontbuilder.hpp	2026-08-24 23:12:36.723827031 +0800
+@@ -2,6 +2,7 @@
+ 
+ #include <qfont.h>
+ #include <qqmlintegration.h>
++#include <qvariant.h>
+ 
+ namespace caelestia::config {
+ 
