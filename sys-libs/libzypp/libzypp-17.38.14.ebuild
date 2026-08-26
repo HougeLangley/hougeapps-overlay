@@ -30,6 +30,7 @@ DEPEND="
 	dev-cpp/yaml-cpp
 	net-libs/libproxy
 	app-text/doxygen
+	dev-libs/libsigc++:2
 	dev-python/graphviz
 	app-crypt/gpgme
 "
