@@ -11,7 +11,7 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 - **来源可溯**：每个 ebuild 均在 `metadata.xml` 标注上游；与 `::gentoo` 主树同名的包（如 gamemode、rtmidi）直接与主树保持逐字节一致，主树收录更新后本仓库随之退役
 - **不维护内核包**：内核相关包（liquorix-sources、xanmod 等）已全部移除，请使用主树或专门的内核 overlay
 
-## 包含的包（14 个）
+## 包含的包（15 个）
 
 ### Caelestia 桌面套件（核心维护）
 
@@ -19,6 +19,7 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 | :--- | :--- | :--- |
 | `gui-apps/caelestia-shell` | 2.3.0 / 2.4.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等） |
 | `gui-apps/quickshell` | 0.3.1 | Qt/QML 桌面 shell 工具包（caelestia 的运行时） |
+| `gui-libs/m3shapes` | 1.0.0 | Material 3 形状 QML 模块（2.4.0 起上游拆分的独立依赖） |
 | `app-misc/caelestia-cli` | 1.1.2 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
 | `media-libs/libcava` | 1.0.0 | CAVA 音频可视化库（quickshell 音频模块后端） |
 | `dev-python/materialyoucolor` | 3.0.4 | Material You 动态取色库（壁纸配色引擎） |
@@ -78,7 +79,7 @@ sudo emerge --sync hougeapps-overlay
 
 ```bash
 # 1. 先装 Hyprland（hyproverlay）+ 本仓库全家桶
-sudo emerge -av gui-apps/caelestia-shell gui-apps/quickshell app-misc/caelestia-cli \
+sudo emerge -av gui-apps/caelestia-shell gui-apps/quickshell gui-libs/m3shapes app-misc/caelestia-cli \
   media-libs/libcava dev-python/materialyoucolor media-fonts/rubik \
   media-fonts/material-symbols media-sound/pwvucontrol
 
