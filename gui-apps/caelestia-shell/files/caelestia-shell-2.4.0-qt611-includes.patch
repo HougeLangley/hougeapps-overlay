@@ -1,0 +1,11 @@
+--- a/plugin/src/Caelestia/Images/iutils.hpp
++++ b/plugin/src/Caelestia/Images/iutils.hpp
+@@ -2,6 +2,8 @@
+ 
+ #include <qobject.h>
+ #include <qqmlintegration.h>
++#include <qqmlengine.h>
++#include <qjsengine.h>
+ #include <qurl.h>
+ 
+ namespace caelestia::images {
