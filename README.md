@@ -17,7 +17,7 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| `gui-apps/caelestia-shell` | 2.3.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等） |
+| `gui-apps/caelestia-shell` | 2.3.0 / 2.4.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等） |
 | `gui-apps/quickshell` | 0.3.1 | Qt/QML 桌面 shell 工具包（caelestia 的运行时） |
 | `app-misc/caelestia-cli` | 1.1.2 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
 | `media-libs/libcava` | 1.0.0 | CAVA 音频可视化库（quickshell 音频模块后端） |
@@ -35,7 +35,7 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 | `app-arch/zchunk` | 1.5.3 / 1.5.4 | 高效增量压缩格式（libsolv 依赖） |
 | `sys-libs/libsolv` | 0.7.35 / 0.7.39 | SAT 依赖求解库（libzypp 依赖） |
 | `sys-libs/libzypp` | 17.37.18 / 17.38.14 | openSUSE 包管理库 |
-| `sys-apps/zypper` | 1.14.94 / 1.14.99 | openSUSE 包管理器 CLI |
+| `sys-apps/zypper` | 1.14.99 / 1.14.100 | openSUSE 包管理器 CLI |
 
 ### 与主树同步
 
