@@ -8,7 +8,7 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 
 - **全 release 锚定**：只收录上游正式 tag/release 版本，**无 9999/live ebuild**，可重复构建
 - **两代保留**：每个包只保留「上一代 + 当前最新」两个版本，历史版本定期清理
-- **来源可溯**：每个 ebuild 均在 `metadata.xml` 标注上游；与 `::gentoo` 主树同名的包（如 gamemode、rtmidi）直接与主树保持逐字节一致，主树收录更新后本仓库随之退役
+- **来源可溯**：每个 ebuild 均在 `metadata.xml` 标注上游；本仓库自主维护所有包的最新版本，主树/其他 overlay 仅作对照参考，不作为版本跟随或退役依据
 - **不维护内核包**：内核相关包（liquorix-sources、xanmod 等）已全部移除，请使用主树或专门的内核 overlay
 
 ## 包含的包（15 个）
@@ -38,12 +38,12 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 | `sys-libs/libzypp` | 17.37.18 / 17.38.14 | openSUSE 包管理库 |
 | `sys-apps/zypper` | 1.14.99 / 1.14.100 | openSUSE 包管理器 CLI |
 
-### 与主树同步
+### 与主树同名的包（自主维护）
 
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| `games-util/gamemode` | 1.8.2 | 与 `::gentoo` 完全一致，主树 bump 后请改用主树 |
-| `media-libs/rtmidi` | 6.0.0 | 同上；Manifest 已对齐官网当前 tarball |
+| `games-util/gamemode` | 1.8.2 | 自主维护；主树版本仅作对照参考 |
+| `media-libs/rtmidi` | 6.0.0 | 自主维护；Manifest 已对齐官网当前 tarball |
 
 ## 使用方法
 
