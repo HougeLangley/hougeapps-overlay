@@ -35,8 +35,8 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 | :--- | :--- | :--- |
 | `app-arch/zchunk` | 1.5.3 / 1.5.4 | 高效增量压缩格式（libsolv 依赖） |
 | `sys-libs/libsolv` | 0.7.35 / 0.7.39 | SAT 依赖求解库（libzypp 依赖） |
-| `sys-libs/libzypp` | 17.37.18 / 17.38.14 | openSUSE 包管理库 |
-| `sys-apps/zypper` | 1.14.99 / 1.14.100 | openSUSE 包管理器 CLI |
+| `sys-libs/libzypp` | 17.38.14 / 17.38.15 | openSUSE 包管理库 |
+| `sys-apps/zypper` | 1.14.100 / 1.14.101 | openSUSE 包管理器 CLI |
 
 ### 与主树同名的包（自主维护）
 
