@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson
+inherit flag-o-matic meson
 
 DESCRIPTION="Fork of cava providing the libcava shared library (used by Quickshell shells)"
 HOMEPAGE="https://github.com/LukashonakV/cava"
@@ -30,6 +30,11 @@ RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 src_configure() {
+	# LTO breaks .incbin embeds: cava ships shaders/themes/config as
+	# assembly .incbin with paths relative to ${S}; at LTO link-time
+	# re-emission the assembler CWD is PORTAGE_BUILDDIR, not ${S},
+	# so every .incbin path 404s ("file not found" in ltrans).
+	filter-lto
 	local emesonargs=(
 		-Dbuild_target=lib
 		-Dasan=disabled
