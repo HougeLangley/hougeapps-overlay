@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-M3SHAPES_REV="32ad9ce328bb77ed349b40a3be10ee9ea610b8ab"
+M3SHAPES_REV="cc8e213301c96ccec0198008675069a3f3951b62"
 
 DESCRIPTION="Material 3 shape library for Qt Quick (Caelestia shell runtime dependency)"
 HOMEPAGE="https://github.com/soramanew/m3shapes"
@@ -26,7 +26,8 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	local mycmakeargs=(
-		# 上游默认相对路径 usr/lib/qt6/qml（Nix/PKGBUILD 场景），Gentoo 需绝对路径
+		# 2026-09-17 上游改用 GNUInstallDirs（${CMAKE_INSTALL_LIBDIR}/qt6/qml）；Gentoo eclass
+		# 注入 CMAKE_INSTALL_LIBDIR=lib64 后其默认值也对，此处绝对路径覆盖为显式兜底
 		-DINSTALL_QMLDIR="${EPREFIX}/usr/lib64/qt6/qml"
 	)
 	cmake_src_configure
