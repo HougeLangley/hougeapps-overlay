@@ -10,7 +10,7 @@ HOMEPAGE="https://fonts.google.com/icons https://github.com/google/material-desi
 
 # 上游 release 节奏为 4.0.0 tag + master 滚动（AUR 亦以 commit 快照打包）；
 # 本包锚定 variablefont 目录最新 commit（2026-08-14）
-COMMIT="40a7a292a79d9394157e1ea24f83d52d5e17c556"
+COMMIT="27e9ef1dbeedc13d682fece4a58e1eda4cb0961a"
 SRC_URI="https://raw.githubusercontent.com/google/material-design-icons/${COMMIT}/variablefont/MaterialSymbolsRounded%5BFILL%2CGRAD%2Copsz%2Cwght%5D.ttf -> MaterialSymbolsRounded-${COMMIT}.ttf"
 S="${WORKDIR}"
 
