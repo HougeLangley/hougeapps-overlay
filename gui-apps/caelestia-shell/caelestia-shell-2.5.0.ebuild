@@ -8,17 +8,12 @@ inherit cmake
 DESCRIPTION="A fluid, morphing desktop shell (Quickshell configuration)"
 HOMEPAGE="https://github.com/caelestia-dots/shell"
 
-# m3shapes 由上游 CMakeLists 以 FetchContent 按此 commit 拉取；
-# Portage 沙箱禁止构建期联网，故作为第二 SRC_URI 预置，
-# 并经 FETCHCONTENT_SOURCE_DIR_M3SHAPES_EXTERNAL 指向本地目录。
-M3SHAPES_REV="bdc327b29f95394a732baf3c9b19658ba23755b6"
-# v2.3.0 tag 的完整 commit：上游 CMake 需要 GIT_REVISION，tarball 无 .git
-GIT_REV="94d5eb9e6fe9c6b1f69e663d9ed410a441e2d67f"
+# m3shapes：上游 2.4.0 起（PR #1909）拆分为独立 QML 模块，由 gui-libs/m3shapes
+# 提供（usr/lib64/qt6/qml/M3Shapes），不再随本包 FetchContent 构建。
+# v2.5.0 tag 的完整 commit：上游 CMake 需要 GIT_REVISION，tarball 无 .git
+GIT_REV="d999d4878ee4cec134168e60d913714566a8cfa6"
 
-SRC_URI="
-	https://github.com/caelestia-dots/shell/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/soramanew/m3shapes/archive/${M3SHAPES_REV}.tar.gz -> m3shapes-${M3SHAPES_REV}.tar.gz
-"
+SRC_URI="https://github.com/caelestia-dots/shell/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/shell-${PV}"
 
 LICENSE="GPL-3.0"
@@ -42,6 +37,7 @@ RDEPEND="
 	${DEPEND}
 	>=gui-apps/quickshell-0.3.0[hyprland,pipewire,mpris,pam,session-lock,tray]
 	dev-qt/qtimageformats:6
+	gui-libs/m3shapes
 	gui-wm/hyprland
 	app-shells/bash
 	app-shells/fish
@@ -58,16 +54,11 @@ RDEPEND="
 "
 BDEPEND="virtual/pkgconfig"
 
-# Qt 6.11 收紧头文件间接 include：补 QQmlEngine/QJSEngine/QVariant 显式声明
-# （iutils.hpp 的 create() 签名与 fontbuilder 的 QVariantMap 依赖旧式间接 include）
-PATCHES=( "${FILESDIR}/${P}-qt611-includes.patch" )
-
 src_configure() {
 	local mycmakeargs=(
 		-DVERSION="${PV}"
 		-DGIT_REVISION="${GIT_REV}"
 		-DDISTRIBUTOR="Gentoo (local overlay)"
-		-DFETCHCONTENT_SOURCE_DIR_M3SHAPES_EXTERNAL="${WORKDIR}/m3shapes-${M3SHAPES_REV}"
 		# 上游依赖 PCH 提供 qobject/qstring/qqmlengine/qvariant/qtimer/qpointer 等头，
 		# 源码不显式 include；Gentoo eclass 默认禁用 PCH 会导致编译失败，必须恢复
 		-DCMAKE_DISABLE_PRECOMPILE_HEADERS=OFF

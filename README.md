@@ -17,10 +17,10 @@ Houge 的个人 Gentoo overlay，以 **[Caelestia](https://github.com/caelestia-
 
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
-| `gui-apps/caelestia-shell` | 2.3.0 / 2.4.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等） |
+| `gui-apps/caelestia-shell` | 2.4.0 / 2.5.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等） |
 | `gui-apps/quickshell` | 0.3.1 | Qt/QML 桌面 shell 工具包（caelestia 的运行时） |
 | `gui-libs/m3shapes` | 1.0.0-r1 | Material 3 形状 QML 模块（2.4.0 起上游拆分的独立依赖） |
-| `app-misc/caelestia-cli` | 1.1.2 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
+| `app-misc/caelestia-cli` | 1.1.2 / 1.1.3 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
 | `media-libs/libcava` | 1.0.0 | CAVA 音频可视化库（quickshell 音频模块后端） |
 | `dev-python/materialyoucolor` | 3.0.4 | Material You 动态取色库（壁纸配色引擎） |
 | `media-sound/pwvucontrol` | 0.5.3-r1 | PipeWire 音量控制面板（`-r1` 为上游 retag 修订） |
