@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-M3SHAPES_REV="cc8e213301c96ccec0198008675069a3f3951b62"
+M3SHAPES_REV="8a6fe8961749887d677700b6508e0c9249968b7e"
 
 DESCRIPTION="Material 3 shape library for Qt Quick (Caelestia shell runtime dependency)"
 HOMEPAGE="https://github.com/soramanew/m3shapes"
