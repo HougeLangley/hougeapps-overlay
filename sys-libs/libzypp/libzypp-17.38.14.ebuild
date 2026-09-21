@@ -18,6 +18,7 @@ DESCRIPTION="ZYpp Package Management library"
 HOMEPAGE="https://doc.opensuse.org/projects/libzypp/HEAD/"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="
 	sys-libs/libsolv

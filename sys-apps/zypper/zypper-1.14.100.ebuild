@@ -18,6 +18,7 @@ DESCRIPTION="World's most powerful command line package manager"
 HOMEPAGE="https://en.opensuse.org/Portal:Zypper"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="
 	sys-libs/libzypp

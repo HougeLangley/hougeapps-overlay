@@ -20,6 +20,7 @@ fi
 
 LICENSE="LGPL-3"
 SLOT="0"
+KEYWORDS="~amd64"
 
 # Upstream recommends leaving all build options enabled by default
 IUSE="

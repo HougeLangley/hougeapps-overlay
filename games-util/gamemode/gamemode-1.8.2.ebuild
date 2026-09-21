@@ -20,6 +20,7 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE="systemd elogind"
 
 REQUIRED_USE="^^ ( systemd elogind )"

@@ -18,6 +18,7 @@ DESCRIPTION="Library for solving packages and reading repositories"
 HOMEPAGE="https://doc.opensuse.org/projects/libzypp/HEAD/"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="
 	app-arch/zchunk
