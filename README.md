@@ -74,7 +74,7 @@ sudo emerge --sync hougeapps-overlay
 
 ### 接受关键词
 
-本仓库包均为测试分支，且部分包（`zchunk`、`libsolv`、`libzypp`、`zypper`、`gamemode`、`quickshell`）**未设置 `KEYWORDS`**。因此需整仓库放行，在 `/etc/portage/package.accept_keywords` 添加：
+本仓库所有包均为 **`~amd64`** 测试分支（`media-libs/rtmidi` 另声明 `amd64 ~arm ~arm64 ~ppc64 x86`）。因此在 `/etc/portage/package.accept_keywords` 添加：
 
 ```
 */*::hougeapps-overlay
@@ -139,6 +139,7 @@ caelestia install
 | `repo_name` | `hougeapps-overlay` |
 | `masters` | `gentoo` |
 | `EAPI` | `8`（全线一致） |
+| `KEYWORDS` | 全线 `~amd64`（`media-libs/rtmidi` 额外含 `amd64 ~arm ~arm64 ~ppc64 x86`）|
 | `thin-manifests` | `true` |
 | `manifest-hashes` | `BLAKE2B SHA512`（`manifest-required-hashes = BLAKE2B`）|
 | `profile-formats` | `portage-2 profile-set` |
