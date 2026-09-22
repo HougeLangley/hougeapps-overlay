@@ -35,8 +35,8 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | `app-arch/zchunk` | 1.5.3 / 1.5.4 | 高效增量压缩格式（libsolv 依赖） |
-| `sys-libs/libsolv` | 0.7.35 / 0.7.39 | SAT 依赖求解库（libzypp 依赖） |
-| `sys-libs/libzypp` | 17.38.14 / 17.38.15 | openSUSE 包管理库 |
+| `sys-libs/libsolv` | 0.7.39 / 0.7.40 | SAT 依赖求解库（libzypp 依赖） |
+| `sys-libs/libzypp` | 17.38.15 / 17.38.16 | openSUSE 包管理库 |
 | `sys-apps/zypper` | 1.14.100 / 1.14.101 | openSUSE 包管理器 CLI |
 
 ### 与主树同名的包（自主维护，2 个）
@@ -120,6 +120,7 @@ caelestia install
 | :--- | :--- | :--- |
 | `deep-check.py` 全仓深度巡检 | 每日 09:00 | 四路合围：tags 全量 / GitHub releases 暗渠道 / commit 快照 / 主树·guru·hyproverlay 对照；外加「仓库里有包但清单没盯」的完整性自检 |
 | `m3shapes-check.py` 专属监检 | 每 2 天 | 输出确定性事实 + `ACTION` 裁决（tag 迁移 / `-rN` 快照 bump / 仅报告 / 无动作） |
+| 静默死亡哨兵（`no_agent` 脚本） | 每日 14:00 | 检查当天巡检是否产出结果文件；**无产出即告警**（防止巡检被截断后无人知晓） |
 
 巡检脚本**动态读取 ebuild 文件名取版本**（不硬编码），因此 bump 后无需维护脚本。全部 ✅ 时静默；发现更新则自动执行「改 ebuild → 编译验证 → 提交 → 推送 → 本机 `emerge --sync`」并在编译失败时停手等人工；有包没被清单盯上会立即报警，杜绝「新包成为巡检盲区」。
 
