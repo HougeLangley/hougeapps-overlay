@@ -26,7 +26,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | `dev-python/materialyoucolor` | 3.0.4 | Material You 动态取色库（壁纸配色引擎）；sdist 已 vendor 全部 C++ 源，构建不联网 |
 | `media-sound/pwvucontrol` | 0.5.3-r1 | PipeWire 音量控制面板；`-r1` 用于适配上游 2026-08 retag 的 0.5.3（Cargo.lock 全量 bump） |
 | `media-fonts/rubik` | 2.3.0 | Rubik 可变字体（Caelestia 默认字体）；上游无 git tag，锚定 AUR `ttf-rubik-vf` 所用同一 commit |
-| `media-fonts/material-symbols` | 4.0.0_p20260918 | Material Symbols Rounded 可变图标字体；上游为「4.0.0 tag + master 滚动」节奏，本包锚定 `variablefont/` 目录最新 commit |
+| `media-fonts/material-symbols` | 4.0.0_p20260925 | Material Symbols Rounded 可变图标字体；上游为「4.0.0 tag + master 滚动」节奏，本包锚定 `variablefont/` 目录最新 commit |
 
 > **注意**：Caelestia 全家桶依赖 Hyprland 合成器，本仓库**不提供** Hyprland——请从官方 [hyproverlay](https://github.com/hyprwm/hyprland-gentoo) 安装。
 
@@ -103,7 +103,7 @@ caelestia install
 | :--- | :--- | :--- |
 | `X.Y.Z` | 上游正式 tag/release | `quickshell-0.3.1` |
 | `X.Y.Z-rN` | 本地打包修订（补丁、依赖修正，或适配上游 retag） | `pwvucontrol-0.5.3-r1` |
-| `X.Y.Z_pYYYYMMDD` | 无 release 的滚动上游，按当日锚定的 commit 打包 | `material-symbols-4.0.0_p20260918` |
+| `X.Y.Z_pYYYYMMDD` | 无 release 的滚动上游，按当日锚定的 commit 打包 | `material-symbols-4.0.0_p20260925` |
 | `A.B.C-rN` 递增链 | 无 tag 上游的周期快照，修订号**单调递增、不复用** | `m3shapes-1.0.0-r2` |
 
 ## 维护说明
