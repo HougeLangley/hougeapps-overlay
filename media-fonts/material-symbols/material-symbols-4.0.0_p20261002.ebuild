@@ -9,8 +9,8 @@ DESCRIPTION="Google Material Symbols variable icon font (Rounded)"
 HOMEPAGE="https://fonts.google.com/icons https://github.com/google/material-design-icons"
 
 # 上游 release 节奏为 4.0.0 tag + master 滚动（AUR 亦以 commit 快照打包）；
-# 本包锚定 variablefont 目录最新 commit（2026-09-25）—— bump 时请同步更新此日期
-COMMIT="bd8cb85bd4bad964fe6918f79665bb40c3a8efef"
+# 本包锚定 variablefont 目录最新 commit（2026-10-02）—— bump 时请同步更新此日期
+COMMIT="737e3324305806514d7909874fa1818ae1808232"
 SRC_URI="https://raw.githubusercontent.com/google/material-design-icons/${COMMIT}/variablefont/MaterialSymbolsRounded%5BFILL%2CGRAD%2Copsz%2Cwght%5D.ttf -> MaterialSymbolsRounded-${COMMIT}.ttf"
 S="${WORKDIR}"
 
