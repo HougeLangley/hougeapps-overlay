@@ -19,7 +19,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | `gui-apps/caelestia-shell` | 2.4.0 / 2.5.0 | Caelestia 的 quickshell 配置（bar/启动器/通知中心/OSD 等）；2.4.0 携带 Qt 6.11 头文件补丁 |
-| `gui-apps/quickshell` | 0.3.1 | Qt/QML 桌面 shell 工具包（Caelestia 的运行时）；携带 strict-aliasing 补丁 |
+| `gui-apps/quickshell` | 0.3.1 / 0.3.2 | Qt/QML 桌面 shell 工具包（Caelestia 的运行时）；携带 strict-aliasing 补丁 |
 | `gui-libs/m3shapes` | 1.0.0-r2 | Material 3 形状 QML 模块。上游 2.4.0 起（PR #1909）从 shell 拆为独立依赖，本包以 commit 快照跟随滚动上游 |
 | `app-misc/caelestia-cli` | 1.1.2 / 1.1.3 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
 | `media-libs/libcava` | 1.0.0 | CAVA 音频可视化库（quickshell 音频模块后端）；仅构建共享库，各 input 后端跟随系统 USE |
