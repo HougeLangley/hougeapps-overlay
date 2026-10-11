@@ -5,7 +5,9 @@ EAPI=8
 
 inherit branding cmake xdg toolchain-funcs
 
-GIT_REVISION=59e9c47b0eb48a9e4bcf9631fa062ee939bd2e83
+# v0.3.1 tag 的完整 commit：上游 CMake 需要 GIT_REVISION，tarball 无 .git
+# （2026-10-11 修正：原值 59e9c47b… 是 v0.3.0 的 commit，历史遗留的版本号显示错误）
+GIT_REVISION=1a4716cde794a59928d9d9fc15f2afc7a95de360
 
 DESCRIPTION="Toolkit for building desktop widgets using QtQuick"
 HOMEPAGE="https://quickshell.org/"
