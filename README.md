@@ -44,7 +44,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | `games-util/gamemode` | 1.8.2 | 自主维护；主树版本仅作对照参考 |
-| `media-libs/rtmidi` | 6.0.0 | 自主维护；Manifest 已对齐官网当前 tarball（上游曾 retag 同版本） |
+| `media-libs/rtmidi` | 6.0.0 / 6.1.0 | 自主维护；6.1.0 起改用 GitHub release 附件 tarball（官网 release/ 目录停在 6.0.0） |
 
 ## 使用方法
 
@@ -145,7 +145,7 @@ caelestia install
 | `manifest-hashes` | `BLAKE2B SHA512`（`manifest-required-hashes = BLAKE2B`）|
 | `profile-formats` | `portage-2 profile-set` |
 | `sign-commits` | `true`（仅对 rsync 镜像生成有意义；git sync 不校验签名）|
-| 结构 | 15 个包 / 9 个 category / 21 个 ebuild |
+| 结构 | 15 个包 / 11 个 category / 23 个 ebuild |
 | 许可 | 本仓库自身 GPL-3.0；各包版权与许可见其 ebuild 的 `LICENSE` 与上游项目 |
 
 ## 问题反馈
