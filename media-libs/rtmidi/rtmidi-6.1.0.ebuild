@@ -22,6 +22,11 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+# 6.1.0 上游把 ALSA 热插拔回归测试挂成 ALL 自定义目标：每次构建（含 install）
+# 都跑测试程序去开 /dev/snd/seq，被 sandbox 拒绝导致 src_install 中止。
+# 补丁把它收进 RTMIDI_BUILD_TESTING 开关（默认 no 时不构建不运行）。
+PATCHES=( "${FILESDIR}/${P}-disable-hotplug-install-test.patch" )
+
 src_configure() {
 	local mycmakeargs=(
 		-DRTMIDI_API_ALSA=$(usex alsa)
