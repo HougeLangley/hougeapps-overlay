@@ -12,7 +12,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 - **自动巡检跟版**：每日全仓四路巡检 + 快照包专属监检（见「维护说明」）；编译失败的版本不会进入仓库
 - **不维护内核包**：内核相关包（liquorix-sources、xanmod 等）已全部移除，请使用主树或专门的内核 overlay
 
-## 包含的包（16 个）
+## 包含的包（17 个）
 
 ### Caelestia 桌面套件（9 个）
 
@@ -46,11 +46,12 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | `games-util/gamemode` | 1.8.2 | 自主维护；主树版本仅作对照参考 |
 | `media-libs/rtmidi` | 6.0.0 / 6.1.0 | 自主维护；6.1.0 起改用 GitHub release 附件 tarball（官网 release/ 目录停在 6.0.0） |
 
-### 影分身包（gentoo 修复回移，1 个）
+### 影分身包（gentoo 修复回移，2 个）
 
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | `media-libs/opencv` | 4.14.0-r100 | ⚠️ **影分身**：复制自 `::gentoo` 4.14.0，回移上游 4.x 的 ffmpeg-9 兼容修复（`supported_framerates`/`pix_fmts` 两处，gentoo bug #980612），解除 `<media-video/ffmpeg-9` 上限；`-r100` 高位修订确保持续压过主树。gentoo 官方修好后**整包退役**（巡检 §3.5 专项监视） |
+| `media-gfx/blender` | 5.0.0-r100 | ⚠️ **影分身**：复制自 `::gentoo` 5.0.0，回移上游 commit `e3c92c22817d`「Audaspace: port ffmpeg 9 support」（blender 5.1 才携带；内嵌 audaspace 的 `FFMPEGWriter.cpp` 用了 ffmpeg-9 已移除的 `AVCodec::supported_samplerates`/`sample_fmts`）。同 `-r100` 惯例，gentoo 官方修好后**整包退役** |
 
 ## 使用方法
 
@@ -151,7 +152,7 @@ caelestia install
 | `manifest-hashes` | `BLAKE2B SHA512`（`manifest-required-hashes = BLAKE2B`）|
 | `profile-formats` | `portage-2 profile-set` |
 | `sign-commits` | `true`（仅对 rsync 镜像生成有意义；git sync 不校验签名）|
-| 结构 | 16 个包 / 11 个 category / 24 个 ebuild |
+| 结构 | 17 个包 / 12 个 category / 25 个 ebuild |
 | 许可 | 本仓库自身 GPL-3.0；各包版权与许可见其 ebuild 的 `LICENSE` 与上游项目 |
 
 ## 问题反馈
