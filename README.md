@@ -12,7 +12,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 - **自动巡检跟版**：每日全仓四路巡检 + 快照包专属监检（见「维护说明」）；编译失败的版本不会进入仓库
 - **不维护内核包**：内核相关包（liquorix-sources、xanmod 等）已全部移除，请使用主树或专门的内核 overlay
 
-## 包含的包（15 个）
+## 包含的包（16 个）
 
 ### Caelestia 桌面套件（9 个）
 
@@ -45,6 +45,12 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | :--- | :--- | :--- |
 | `games-util/gamemode` | 1.8.2 | 自主维护；主树版本仅作对照参考 |
 | `media-libs/rtmidi` | 6.0.0 / 6.1.0 | 自主维护；6.1.0 起改用 GitHub release 附件 tarball（官网 release/ 目录停在 6.0.0） |
+
+### 影分身包（gentoo 修复回移，1 个）
+
+| 包 | 版本 | 说明 |
+| :--- | :--- | :--- |
+| `media-libs/opencv` | 4.14.0-r100 | ⚠️ **影分身**：复制自 `::gentoo` 4.14.0，回移上游 4.x 的 ffmpeg-9 兼容修复（`supported_framerates`/`pix_fmts` 两处，gentoo bug #980612），解除 `<media-video/ffmpeg-9` 上限；`-r100` 高位修订确保持续压过主树。gentoo 官方修好后**整包退役**（巡检 §3.5 专项监视） |
 
 ## 使用方法
 
@@ -118,7 +124,7 @@ caelestia install
 
 | 机制 | 频率 | 作用 |
 | :--- | :--- | :--- |
-| `deep-check.py` 全仓深度巡检 | 每日 09:00 | 四路合围：tags 全量 / GitHub releases 暗渠道 / commit 快照 / 主树·guru·hyproverlay 对照；外加「仓库里有包但清单没盯」的完整性自检 |
+| `deep-check.py` 全仓深度巡检 | 每日 09:00 | 四路合围：tags 全量 / GitHub releases 暗渠道 / commit 快照 / 主树·guru·hyproverlay 对照；外加「仓库里有包但清单没盯」的完整性自检与影分身包退役监视 |
 | `m3shapes-check.py` 专属监检 | 每 2 天 | 输出确定性事实 + `ACTION` 裁决（tag 迁移 / `-rN` 快照 bump / 仅报告 / 无动作） |
 | 静默死亡哨兵（`no_agent` 脚本） | 每日 14:00 | 检查当天巡检是否产出结果文件；**无产出即告警**（防止巡检被截断后无人知晓） |
 
@@ -145,7 +151,7 @@ caelestia install
 | `manifest-hashes` | `BLAKE2B SHA512`（`manifest-required-hashes = BLAKE2B`）|
 | `profile-formats` | `portage-2 profile-set` |
 | `sign-commits` | `true`（仅对 rsync 镜像生成有意义；git sync 不校验签名）|
-| 结构 | 15 个包 / 11 个 category / 23 个 ebuild |
+| 结构 | 16 个包 / 11 个 category / 24 个 ebuild |
 | 许可 | 本仓库自身 GPL-3.0；各包版权与许可见其 ebuild 的 `LICENSE` 与上游项目 |
 
 ## 问题反馈
