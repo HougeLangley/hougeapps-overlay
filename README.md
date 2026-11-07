@@ -12,7 +12,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 - **自动巡检跟版**：每日全仓四路巡检 + 快照包专属监检（见「维护说明」）；编译失败的版本不会进入仓库
 - **不维护内核包**：内核相关包（liquorix-sources、xanmod 等）已全部移除，请使用主树或专门的内核 overlay
 
-## 包含的包（17 个）
+## 包含的包（18 个）
 
 ### Caelestia 桌面套件（9 个）
 
@@ -39,12 +39,13 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | `sys-libs/libzypp` | 17.38.16 / 17.38.17 | openSUSE 包管理库 |
 | `sys-apps/zypper` | 1.14.101 / 1.14.102 | openSUSE 包管理器 CLI |
 
-### 与主树同名的包（自主维护，2 个）
+### 与主树同名的包（自主维护，3 个）
 
 | 包 | 版本 | 说明 |
 | :--- | :--- | :--- |
 | `games-util/gamemode` | 1.8.2 | 自主维护；主树版本仅作对照参考 |
 | `media-libs/rtmidi` | 6.0.0 / 6.1.0 | 自主维护；6.1.0 起改用 GitHub release 附件 tarball（官网 release/ 目录停在 6.0.0） |
+| `net-misc/zerotier` | 1.16.2 | 自主维护；领先主树（1.16.0-r2 的 Cargo.lock 钉 openssl-sys 0.9.109，不支持系统 OpenSSL 4.1.0；1.16.2 自带 0.9.116 原生支持零补丁）。crate 供应走上游维护者的 gitlab 预打包 tarball |
 
 ### 影分身包（gentoo 修复回移，2 个）
 
@@ -152,7 +153,7 @@ caelestia install
 | `manifest-hashes` | `BLAKE2B SHA512`（`manifest-required-hashes = BLAKE2B`）|
 | `profile-formats` | `portage-2 profile-set` |
 | `sign-commits` | `true`（仅对 rsync 镜像生成有意义；git sync 不校验签名）|
-| 结构 | 17 个包 / 12 个 category / 25 个 ebuild |
+| 结构 | 18 个包 / 13 个 category / 26 个 ebuild |
 | 许可 | 本仓库自身 GPL-3.0；各包版权与许可见其 ebuild 的 `LICENSE` 与上游项目 |
 
 ## 问题反馈
