@@ -23,7 +23,7 @@ Houge 的个人 Gentoo overlay。以 **[Caelestia](https://github.com/caelestia-
 | `gui-libs/m3shapes` | 1.0.0-r2 | Material 3 形状 QML 模块。上游 2.4.0 起（PR #1909）从 shell 拆为独立依赖，本包以 commit 快照跟随滚动上游 |
 | `app-misc/caelestia-cli` | 1.1.2 / 1.1.3 | Caelestia 命令行工具（壁纸/配色/screenshot/安装器） |
 | `media-libs/libcava` | 1.0.0 | CAVA 音频可视化库（quickshell 音频模块后端）；仅构建共享库，各 input 后端跟随系统 USE |
-| `dev-python/materialyoucolor` | 3.0.4 | Material You 动态取色库（壁纸配色引擎）；sdist 已 vendor 全部 C++ 源，构建不联网 |
+| `dev-python/materialyoucolor` | 3.1.0 | Material You 动态取色库（壁纸配色引擎）；sdist 已 vendor 全部 C++ 源，构建不联网 |
 | `media-sound/pwvucontrol` | 0.5.3-r1 | PipeWire 音量控制面板；`-r1` 用于适配上游 2026-08 retag 的 0.5.3（Cargo.lock 全量 bump） |
 | `media-fonts/rubik` | 2.3.0 | Rubik 可变字体（Caelestia 默认字体）；上游无 git tag，锚定 AUR `ttf-rubik-vf` 所用同一 commit |
 | `media-fonts/material-symbols` | 4.0.0_p20261023 | Material Symbols Rounded 可变图标字体；上游为「4.0.0 tag + master 滚动」节奏，本包锚定 `variablefont/` 目录最新 commit |
